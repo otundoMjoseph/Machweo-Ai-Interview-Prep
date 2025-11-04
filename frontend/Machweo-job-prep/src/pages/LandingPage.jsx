@@ -1,91 +1,112 @@
 import React, { useState } from 'react'
 import HERO_IMG from '../assets/Machweohero.jpeg'
-import {APP_FEATURES} from '../utils/data'
+import { APP_FEATURES } from '../utils/data'
 import { useNavigate } from 'react-router-dom'
 
-
 const LandingPage = () => {
-const navigate = useNavigate()
-
-
+  const navigate = useNavigate()
   const [openAuthModel, setOpenAuthModel] = useState(false)
   const [currentPage, setCurrentPage] = useState("login")
-  
-  const handleCTA = ()=>{}
+
+  const handleCTA = () => {
+    navigate('/signup')
+  }
+
   return (
     <>
-    <div className='w-full min-h-full bg-[#FFFCEF]'>
-      <div className='w-[500px] h-[500px] bg-amber-200/20 blur-[65px] absolute top-0 left' >
+      <div className='w-full min-h-full bg-[#FFFCEF] pb-36 relative'>
+        <div className='w-[500px] h-[500px] bg-amber-200/20 blur-[65px] absolute top-0 left-0'></div>
 
-      </div>
-      <div className='container mx-auto px-4 pt-6 pb-[200px relative z-10]'>
-        {/*Header  */}
-        <header className='flex justify-between items-center mb-16'>
-          <div className="text-xl text-black font-bold ">
-            Interview Prep AI
-          </div>
-
-          <button className='bg-linear-to-r from-[#FF9324] to-[#c99afb] text-sm semibold text-white px-7 py-2.5 rounded-full hover:bg-black hover:text-white border border-white transition-colors cursor-pointer '
-            onClick={() => (setOpenAuthModel(false))}>
-            Login/Signup
-          </button>
-        </header>
-        {/*Hero Content */}
-
-        <div className="flex flex-col md:flex-row items-center">
-          <div className="w-full md:w-1/2 pr-4 mb-8 md:mb-0">
-        <div className="flex-items center jusify-left mb-2">
-              <div className="flex-items center gap-2 text[13px] text-amber-600 font-semibold bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
-                  {/*to import these icon */}
-                  
-                    AI Powered
-              </div>
+        <div className='container mx-auto px-4 pt-6 pb-[200px] relative z-10'>
+          {/* Header */}
+          <header className='flex justify-between items-center mb-16'>
+            <div className='text-xl text-black font-bold'>
+              Interview Prep AI
             </div>
-            <h1 className="text-5xl text-black font-medium mb-6 leading-tight">
-              <span className="text-transaparent bg-clip-text bg-[radial-gradient(circle,_#FF9324_0%, #FCD760_100% )] bg-[length:200%_200%] animate-text-shine font-semibold  ">
-                Ace Interviews with <br />
-                Machweo AI Interview Prep
-              </span>
-              Learning
-            </h1>
-          </div>
-          
-          <div className="w-full md:w-1/2">
-            <p className="text-[17px] text-gray-900 mr-0 md:mr-20 mb-6">
-              Get-role specific questions, expand answers when you need them,
-              Dive deeper into concepts, and organize everything your way, 
-              from preparations to mastery -your ultimate interview toolkit is here.
 
-            </p>
-            
-            <button className="bg-black text-sm font-semibold text-white px-7 py-2.5 rounded-full hover:yellow-100 hover:text-black border border-yellow-50 hover:border-yellow-300 transition-colors cursor-pointer"
-            onClick={handleCTA}
-            
+            <button
+              className='bg-gradient-to-r from-[#FF9324] to-[#c99afb] text-sm font-semibold text-white px-7 py-2.5 rounded-full hover:bg-black hover:text-white border border-white transition-colors cursor-pointer'
+              onClick={() => setOpenAuthModel(true)}
             >
-              Get Started 
-              
-          </button>
+              Login / Signup
+            </button>
+          </header>
 
+          {/* Hero Content */}
+          <div className='flex flex-col md:flex-row items-center'>
+            <div className='w-full md:w-1/2 pr-4 mb-8 md:mb-0'>
+              <div className='flex items-center justify-start mb-2'>
+                <div className='flex items-center gap-2 text-[13px] text-amber-600 font-semibold bg-amber-100 px-3 py-1 rounded-full border border-amber-300'>
+                  AI Powered
+                </div>
+              </div>
 
+              <h1 className='text-5xl text-black font-medium mb-6 leading-tight'>
+                <span className='text-transparent bg-clip-text bg-[radial-gradient(circle,_#FF9324_0%,_#FCD760_100%)] bg-[length:200%_200%] animate-text-shine font-semibold'>
+                  Ace Interviews with <br />
+                  Machweo AI Interview Prep
+                </span>
+                Learning
+              </h1>
+            </div>
+
+            <div className='w-full md:w-1/2'>
+              <p className='text-[17px] text-gray-900 mr-0 md:mr-20 mb-6'>
+                Get role-specific questions, expand answers when you need them,
+                dive deeper into concepts, and organize everything your way —
+                your ultimate interview toolkit is here.
+              </p>
+
+              <button
+                className='bg-black text-sm font-semibold text-white px-7 py-2.5 rounded-full hover:bg-yellow-100 hover:text-black border border-yellow-50 hover:border-yellow-300 transition-colors cursor-pointer'
+                onClick={handleCTA}
+              >
+                Get Started
+              </button>
+            </div>
           </div>
-          </div>
-          </div>
+        </div>
       </div>
 
-      <div className="">
-        <div className="">
-
-          <section className="">
-
-        <img src={HERO_IMG} alt="Hero Image" className=''/>
-      </section>
+      {/* Hero Image */}
+      <div className='w-full min-h-full relative z-10 mb-56'>
+        <div className='flex items-center justify-center -mt-36'>
+          <section>
+            <img src={HERO_IMG} alt='Hero' className='w-[80vw] rounded-lg' />
+          </section>
         </div>
 
-      </div>
+        {/* Features Section */}
+        <section className='text-center mt-20'>
+          <h2 className='text-3xl font-bold mb-10'>
+            Features that Make You Stand Out
+          </h2>
 
-      
-      </>
-    
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+            {APP_FEATURES.slice(0, 3).map((feature) => (
+              <div key={feature.id} className='p-6 bg-white shadow rounded-lg'>
+                <h3 className='text-xl font-semibold mb-3'>{feature.title}</h3>
+                <p className='text-gray-600'>{feature.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-10'>
+            {APP_FEATURES.slice(3).map((feature) => (
+              <div key={feature.id} className='p-6 bg-white shadow rounded-lg'>
+                <h3 className='text-xl font-semibold mb-3'>{feature.title}</h3>
+                <p className='text-gray-600'>{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className='text-center mt-16 text-gray-500'>
+          Made with ❤️ by Otundo M Joseph
+        </footer>
+      </div>
+    </>
   )
 }
 
