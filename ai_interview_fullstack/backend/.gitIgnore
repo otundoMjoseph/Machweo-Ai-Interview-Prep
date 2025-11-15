@@ -1,0 +1,10 @@
+/nodemodules
+/.env
+/dist
+/.DS_Store
+/coverage
+/logs
+*.log
+/pm2.pid
+/.vscode
+/.idea
