@@ -5,7 +5,7 @@ const Icon = ({ name, color, size, className }) => {
   const LucideIcon = icons[name];
 
   if (!LucideIcon) {
-    return null; // Or return a default icon
+    return null; 
   }
 
   return React.createElement(LucideIcon, { color, size, className });

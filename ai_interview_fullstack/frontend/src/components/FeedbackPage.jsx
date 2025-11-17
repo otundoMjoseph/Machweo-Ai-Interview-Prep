@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from './Icon.jsx';
 
-// A simple markdown to React element converter for bold and lists
+
 const SimpleMarkdown = ({ text }) => {
     const lines = text.split('\n');
     const elements = lines.map((line, i) => {
@@ -29,7 +29,7 @@ const SimpleMarkdown = ({ text }) => {
 
     const flushList = () => {
         if (listItems.length > 0) {
-            // Simple assumption: all lists are unordered. Can be improved.
+            
             groupedElements.push(React.createElement('ul', { key: `list-${groupedElements.length}`, className: "list-disc list-inside pl-4 mb-4" }, ...listItems));
             listItems = [];
         }
