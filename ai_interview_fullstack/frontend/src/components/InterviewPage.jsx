@@ -26,6 +26,6 @@ const InterviewPage = ({ role, question, onSubmit }) => {
       )
     )
   );
-};
+}; 
 
 export default InterviewPage;
