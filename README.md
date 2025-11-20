@@ -68,4 +68,5 @@ The command to generate optimized static assets for frontend deployment:
 
 cd frontend
 npm run build
+
 6. License
